@@ -1,10 +1,6 @@
 {
     "name": "C# .NET 10 Development",
-    "image": "mcr.microsoft.com/devcontainers/dotnet:10.0", // Or a custom Dockerfile
-    // "build": {
-    //   "dockerfile": "Dockerfile",
-    //   "context": "."
-    // },
+    "image": "mcr.microsoft.com/devcontainers/dotnet:10.0",
     "features": {
       "ghcr.io/devcontainers/features/dotnet:1": {
         "version": "10.0"
@@ -15,13 +11,8 @@
         "extensions": [
           "ms-dotnettools.csharp",
           "ms-dotnettools.vscode-dotnet-runtime",
-          "ms-vscode.vscode-node-azure-pack", // Example: if you need Node.js/Azure tools
-          "humao.rest-client" // Example: for API testing
-        ],
-        "settings": {
-          "dotnet.server.useOmnisharp": false, // Use C# Dev Kit language server
-          "dotnet.server.path": "/usr/share/dotnet/sdk/10.0.100/DotnetTools/project-system-tools/ProjectSystemTools.dll" // Adjust if needed
-        }
+          "ms-dotnettools.csdevkit"
+        ]
       }
     },
     "postCreateCommand": "dotnet restore" // Example: restore dependencies after container creation
